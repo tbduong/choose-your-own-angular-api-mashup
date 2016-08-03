@@ -1,21 +1,21 @@
 
 <div class="col-md-7">
-
-  <input type="text" class="form-model" ng-model="searchText" placeholder="Search Movie Title!">
-  <button type="submit" ng-click"searchCtrl.showSearch(movie)">Search</button>
-
+<form>
+  <input type="text" class="form-model" ng-model="searchCtrl.movie_search_input" placeholder="Search Movie Title!">
+  <button type='submit' value="submit" ng-click="searchCtrl.searchInput(movie)">Search</button>
+</form>
 </div>
 
-<div class='col-md-7' ng-controller="MovieIndexController as indexCtrl">
-<h3> <b>Movie Title:</b> {{indexCtrl.movie.Title}} </h3>
-<img ng-src="{{indexCtrl.movie.Poster}}">
+<div class='col-md-7'>
+<h3> <b>Movie Title:</b> {{searchCtrl.movie.Title}} </h3>
+<img ng-src="{{searchCtrl.movie.Poster}}">
 <ul>
-  <li> Released: {{indexCtrl.movie.Released}}</li>
-  <li> Genre: {{indexCtrl.movie.Genre}}</li>
-  <li> Rated: {{indexCtrl.movie.Rated}}</li>
-  <li> Director: {{indexCtrl.movie.Director}}</li>
-  <li> Actors: {{indexCtrl.movie.Actors}}</li>
+  <li> Released: {{searchCtrl.movie.Released}}</li>
+  <li> Genre: {{searchCtrl.movie.Genre}}</li>
+  <li> Rated: {{searchCtrl.movie.Rated}}</li>
+  <li> Director: {{searchCtrl.movie.Director}}</li>
+  <li> Actors: {{searchCtrl.movie.Actors}}</li>
 </ul>
-<h3> IMDB Rating: {{indexCtrl.movie.imdbRating}}</h3>
- link: <a ng-href="http://www.omdbapi.com/?t={{indexCtrl.movie.Title}}&plot=short&r=json">{{indexCtrl.movie.Title}}</a>
+<h3> IMDB Rating: {{searchCtrl.movie.imdbRating}}</h3>
+ link: <a ng-href="http://www.omdbapi.com/?t={{searchCtrl.movie_search_input}}&plot=short&r=json">{{searchCtrl.movie.Title}}</a>
 </div>
