@@ -1,4 +1,4 @@
-
+<h2> Search for a movie: </h2>
 <div class="col-md-7">
 <form>
   <input type="text" class="form-model" ng-model="searchCtrl.movie_search_input" placeholder="Search Movie Title!">
@@ -6,16 +6,23 @@
 </form>
 </div>
 
-<div class='col-md-7'>
-<h3> <b>Movie Title:</b> {{searchCtrl.movie.Title}} </h3>
+<div class='col-md-7 col-md-offset-2'>
+<h2> <b>Movie Title:</b> {{searchCtrl.movie.Title}} </h2>
+<div class="thumbnail">
 <img ng-src="{{searchCtrl.movie.Poster}}">
+</div>
+<h4> <b>Synopsis:</b> {{searchCtrl.movie.Plot}}</h4>
 <ul>
-  <li> Released: {{searchCtrl.movie.Released}}</li>
-  <li> Genre: {{searchCtrl.movie.Genre}}</li>
-  <li> Rated: {{searchCtrl.movie.Rated}}</li>
-  <li> Director: {{searchCtrl.movie.Director}}</li>
-  <li> Actors: {{searchCtrl.movie.Actors}}</li>
+  <li> <b>Released:</b> {{searchCtrl.movie.Released}}</li>
+  <li> <b>Genre:</b> {{searchCtrl.movie.Genre}}</li>
+  <li> <b>Rated:</b> {{searchCtrl.movie.Rated}}</li>
+  <li> <b>Runtime:</b> {{searchCtrl.movie.Runtime}} </li>
+  <li> <b>Director:</b> {{searchCtrl.movie.Director}}</li>
+  <li> <b>Actors:</b> {{searchCtrl.movie.Actors}}</li>
+  <li> <b>Awards:</b> {{searchCtrl.movie.Awards}}</li>
 </ul>
-<h3> IMDB Rating: {{searchCtrl.movie.imdbRating}}</h3>
- link: <a ng-href="http://www.omdbapi.com/?t={{searchCtrl.movie_search_input}}&plot=short&r=json">{{searchCtrl.movie.Title}}</a>
+<hr></hr>
+<h3> <b>IMDB Rating:</b> {{searchCtrl.movie.imdbRating}}</h3>
+<h4> IMDB User Votes: {{searchCtrl.movie.imdbVotes}}</h4>
+ Raw JSON: <a ng-href="http://www.omdbapi.com/?t={{searchCtrl.movie_search_input}}&plot=short&r=json">{{searchCtrl.movie.Title}}</a>
 </div>
